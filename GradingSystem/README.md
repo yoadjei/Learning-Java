@@ -1,0 +1,2 @@
+📌 A grading system that takes an exam score, assessment score, and fee payment status as input, evaluates whether the student passes or fails, and determines if they qualify for a certificate.
+It uses logical conditions to check individual and overall performance, accounts for special "condoned" cases, and ensures that the final certification decision is based on both academic and financial requirements.
