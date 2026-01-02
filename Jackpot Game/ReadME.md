@@ -1,56 +1,118 @@
-# Enhanced Jackpot Game
+# Casino Game Suite
 
-This is a simple Java program for a text-based jackpot game. It includes features like betting, spin limits, partial matches, and high score tracking.
+A collection of casino style games with persistent high scores, multiple difficulty levels, and a leaderboard.
 
-## How to Play
+## What You'll Learn
 
-1. You start with a balance of $100.
-2. Place a bet for each spin (you can quit by entering `0` as your bet).
-3. Spin the jackpot machine:
-   - Match **3 numbers** to win a jackpot (10x your bet).
-   - Match **2 numbers** to win a smaller prize (2x your bet).
-4. The game ends when you run out of spins or balance.
+This project covers:
 
-## Features
-
-- **Betting System**: Players can bet an amount before each spin.
-- **Spin Limit**: Players have a maximum of 10 spins per game.
-- **Partial Matches**: Rewards for matching 2 numbers.
-- **High Score Tracking**: Tracks the highest balance achieved during the game.
-- **User-Friendly Interface**: Includes symbols like 🎰, 🎉, and ✨ for a fun experience.
+- **Random Number Generation** for game mechanics
+- **Game Loops** and state management
+- **File I/O** for persistent leaderboards
+- **Methods** for code organization
+- **ArrayList** for dynamic data
+- **Thread.sleep()** for timing effects
+- **Switch Statements** for menu handling
 
 ## How to Run
 
-1. **Compile the program**:
-   ```bash
-   javac EnhancedJackpotGame.java
-   ```
-
-2. **Run the program**:
-   ```bash
-   java EnhancedJackpotGame
-   ```
-
-## Requirements
-
-- Java Development Kit (JDK) installed on your system.
-
-## Example Gameplay
-
-```
-Welcome to the Enhanced Jackpot Game!
-You start with a balance of $100
-Match 3 numbers to win big, or 2 numbers for a small prize!
-You have 10 spins. Good luck!
-
-Your current balance is: $100
-Enter your bet amount (or 0 to quit): 10
-🎰 Spinning... 🎰
-You spun: 3 | 3 | 7
-✨ Partial match! You win $20!
-Spins remaining: 9
+```bash
+javac EnhancedJackpotGame.java
+java EnhancedJackpotGame
 ```
 
-## License
+## Games Included
 
-This project is for learning purposes and is free to use.
+### 1. Slot Machine
+The classic 3 reel slot machine!
+- Match all 3 symbols for JACKPOT (8x to 10x depending on difficulty)
+- Match 2 symbols for a small win (2x)
+- More symbols on harder difficulty = less chance to match
+
+### 2. Dice Game
+Roll against the dealer:
+- Both roll 2 dice
+- Higher total wins
+- Ties return your bet
+
+### 3. High Low
+Card guessing game:
+- See one card
+- Guess if the next is higher or lower
+- Correct guess doubles your bet
+
+### 4. Number Guess
+Test your intuition:
+- Secret number picked in a range
+- Limited guesses based on difficulty
+- Fewer guesses = bigger multiplier
+
+## Difficulty Levels
+
+| Setting | Easy | Normal | Hard |
+|---------|------|--------|------|
+| Slot symbols | 9 | 11 | 13 |
+| Number range | 1 to 10 | 1 to 20 | 1 to 30 |
+| Guess attempts | 5 | 4 | 3 |
+| Jackpot multiplier | 9x | 8x | 7x |
+
+## Features
+
+- **Persistent Leaderboard** saved to file
+- **Personal Stats** tracking wins and games played
+- **Balance Management** add funds anytime
+- **Difficulty Settings** customize your experience
+
+## Sample Session
+
+```
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+  $                                  $
+  $     WELCOME TO THE CASINO        $
+  $         GAME SUITE               $
+  $                                  $
+  $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+Enter your name: John
+
+=== SLOT MACHINE ===
+Enter bet amount: 20
+
+Spinning...
+
+  +-------+-------+-------+
+  |   BAR |   BAR | LEMON |
+  +-------+-------+-------+
+
+  Two matching! You win $40!
+Balance: $120
+```
+
+## File Format
+
+Leaderboard is saved in a simple format:
+```
+John: $350
+Jane: $280
+Bob: $150
+```
+
+## Code Structure
+
+The game is organized into methods:
+- `playSlotMachine()` for slots
+- `playDiceGame()` for dice
+- `playHighLow()` for cards
+- `playNumberGuess()` for guessing
+- `getBet()` handles betting validation
+- `saveLeaderboard()` / `loadLeaderboard()` for persistence
+
+## Try These Modifications
+
+1. Add more games (blackjack, roulette, poker)
+2. Implement achievements system
+3. Add daily bonus feature
+4. Create tournaments between saved players
+5. Add sound effects using System.out.print("\007")
+6. Implement a loan system when broke
+7. Add animated ASCII art for wins
